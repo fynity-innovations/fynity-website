@@ -41,7 +41,7 @@ export function ContactInfo() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-12 lg:py-16">
+    <section ref={ref} className="py-12 lg:py-8">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {contactDetails.map((detail, index) => (

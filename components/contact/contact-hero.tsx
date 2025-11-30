@@ -8,7 +8,7 @@ export function ContactHero() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section ref={ref} className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+    <section ref={ref} className="relative pt-32 pb-16 lg:pt-40 lg:pb-2 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
