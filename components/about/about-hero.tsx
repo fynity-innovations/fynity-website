@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion"
 import { Sparkles } from "lucide-react"
+import Image from "next/image"
 
 export function AboutHero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+    <section className="relative pt-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
@@ -16,9 +17,15 @@ export function AboutHero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-6"
+            className="inline-flex items-center justify-center w-20 h-20 rounded-2xl"
           >
-            <Sparkles className="w-8 h-8 text-primary" />
+            <Image 
+            src="/fynity.png" 
+            alt="Fynity Logo" 
+            width={150} 
+            height={40} 
+            className="object-contain" 
+            priority />
           </motion.div>
 
           <motion.h1

@@ -48,28 +48,15 @@ export function Navbar() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          {/* <Link href="/" className="flex items-center gap-2 group">
-            <motion.div
-              whileHover={{ rotate: 180 }}
-              transition={{ duration: 0.3 }}
-              className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center"
-            >
-              <Sparkles className="w-5 h-5 text-primary-foreground" />
-            </motion.div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Fynity
-            </span>
-          </Link> */}
-
           <Link href="/" className="flex items-center gap-2 group">
             <motion.div
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="relative h-10 w-auto" 
+              className="relative w-auto" 
             >
               <Image
-                src="/fynity-logo3.png" 
+                src={theme === "dark" ? "/fynity-bright.png" : "/fynity-dark.png"}
                 alt="Fynity Logo"
                 width={150}
                 height={40} 

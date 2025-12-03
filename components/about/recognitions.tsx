@@ -4,22 +4,23 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Building2, Rocket, FileCheck, CheckCircle } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 const recognitions = [
   {
-    icon: Building2,
+    logo: "/msme.jpeg",
     title: "MSME Certified",
     description: "Registered under Ministry of Micro, Small & Medium Enterprises, Government of India.",
     badge: "Udyam Registration",
   },
   {
-    icon: Rocket,
+    logo: "/startup-india.jpeg",
     title: "Startup India Recognized",
     description: "Officially recognized under the Startup India initiative by DPIIT, Government of India.",
     badge: "DPIIT Recognition",
   },
   {
-    icon: FileCheck,
+    logo: "/mca.jpeg",
     title: "LLP Registered",
     description: "Legally registered as a Limited Liability Partnership under the Companies Act.",
     badge: "MCA Registration",
@@ -40,7 +41,7 @@ export function Recognitions() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-20 lg:py-32 bg-muted/30">
+    <section ref={ref} className="py-12 lg:py-12 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,10 +71,17 @@ export function Recognitions() {
                   <div className="flex items-start gap-4">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
-                      className="w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center"
+                      className="w-16 h-16 shrink-0 rounded-2xl border border-border flex items-center justify-center"
                     >
-                      <item.icon className="w-7 h-7 text-primary" />
+                      <Image
+                        src={item.logo}
+                        alt={item.title}
+                        width={48}
+                        height={48}
+                        className="object-contain"
+                      />
                     </motion.div>
+
                     <div>
                       <span className="inline-block px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded mb-2">
                         {item.badge}

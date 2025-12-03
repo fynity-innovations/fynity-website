@@ -107,7 +107,7 @@ export function HeroSection() {
               Book Free Mentorship Call
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button> */}
-            <Button variant="outline" size="lg" asChild className="w-full sm:w-auto text-base px-8 py-6 bg-transparent">
+            <Button size="lg" asChild className="w-full sm:w-auto text-base px-8 py-6">
               <Link href="/services">
                 <Play className="mr-2 w-5 h-5" />
                 Explore Programs

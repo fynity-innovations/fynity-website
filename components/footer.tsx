@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Sparkles, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Youtube } from "lucide-react"
+import Image from "next/image"
 
 const footerLinks = {
   company: [
@@ -39,9 +40,22 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
+            <Link href="/" className="flex items-center mb-4">
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center">
+                <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl"
+                >
+                <Image 
+                src="/fynity.png" 
+                alt="Fynity Logo" 
+                width={150} 
+                height={40} 
+                className="object-contain" 
+                priority />
+              </motion.div>
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Fynity Innovations

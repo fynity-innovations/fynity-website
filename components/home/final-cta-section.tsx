@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useBookingModal } from "@/hooks/use-booking-modal"
+import Image from "next/image"
 
 export function FinalCTASection() {
   const ref = useRef(null)
@@ -12,7 +13,7 @@ export function FinalCTASection() {
   const { openModal } = useBookingModal()
 
   return (
-    <section ref={ref} className="py-20 lg:py-32 relative overflow-hidden">
+    <section ref={ref} className="py-20 lg:py-12 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
@@ -26,9 +27,15 @@ export function FinalCTASection() {
         >
           <motion.div
             whileHover={{ rotate: 180 }}
-            className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-6"
+            className="inline-flex items-center justify-center w-20 h-20 rounded-2xl" 
           >
-            <Sparkles className="w-8 h-8 text-primary" />
+            <Image 
+            src="/fynity.png" 
+            alt="Fynity Logo" 
+            width={150} 
+            height={40} 
+            className="object-contain" 
+            priority />
           </motion.div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
