@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useBookingModal } from "@/hooks/use-booking-modal"
 
+
 const services = [
   {
     id: "training",
@@ -118,15 +119,31 @@ export function ServicesTabs() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [activeTab, setActiveTab] = useState("training")
   const { openModal } = useBookingModal()
-
+  const contentRef = useRef<HTMLDivElement>(null)
   const activeService = services.find((s) => s.id === activeTab)
 
   return (
     <section ref={ref} className="py-20 lg:py-12">
       <div className="container mx-auto px-4 lg:px-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs
+          value={activeTab}
+          onValueChange={(value) => {
+            setActiveTab(value)
+
+            // Smooth scroll to tab content
+            setTimeout(() => {
+              contentRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              })
+            }, 50)
+          }}
+          className="w-full"
+        >
+
           {/* Tabs List */}
           <motion.div
+            ref={contentRef}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}

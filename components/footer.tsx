@@ -29,7 +29,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/fynity-innovations-80253139b/", label: "LinkedIn" },
   { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/fynityinnovations?igsh=Zmt5cXlzZ3d4Y3Yz", label: "Instagram" },
   { icon: Youtube, href: "#", label: "YouTube" },
 ]
 
@@ -99,7 +99,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
+{/* 
           <div>
             <h3 className="font-semibold text-foreground mb-4">Programs</h3>
             <ul className="space-y-3">
@@ -111,7 +111,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h3 className="font-semibold text-foreground mb-4">Resources</h3>
@@ -137,6 +137,7 @@ export function Footer() {
               <motion.a
                 key={social.label}
                 href={social.href}
+                target="_blank"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"

@@ -14,12 +14,12 @@ export function ContactHero() {
         <motion.div
           animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
           transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-64 h-64 rounded-full"
         />
         <motion.div
           animate={{ x: [0, -50, 0], y: [0, 50, 0] }}
           transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute bottom-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl"
+          className="absolute bottom-20 left-10 w-72 h-72 rounded-full"
         />
       </div>
 
@@ -29,7 +29,7 @@ export function ContactHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-primary text-sm font-medium border border-primary/20"
           >
             Get in Touch
           </motion.span>

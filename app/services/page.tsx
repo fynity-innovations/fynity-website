@@ -16,7 +16,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServicesTabs />
       <ProcessSection />
-      <ServicesCTA />
+      {/* <ServicesCTA /> */}
     </>
   )
 }

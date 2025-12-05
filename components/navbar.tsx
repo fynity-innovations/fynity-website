@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/workshop", label: "Workshop" },
   { href: "/contact", label: "Contact" },
 ]
 
@@ -25,6 +26,7 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
   const { openModal } = useBookingModal()
   const [mounted, setMounted] = useState(false)
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -42,7 +44,8 @@ export function Navbar() {
       transition={{ duration: 0.5 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm" : "bg-transparent",
+        "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm",
+        // isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm" : "bg-transparent",
       )}
     >
       <nav className="container mx-auto px-4 lg:px-8">
@@ -55,14 +58,16 @@ export function Navbar() {
               transition={{ duration: 0.3 }}
               className="relative w-auto" 
             >
-              <Image
-                src={theme === "dark" ? "/fynity-bright.png" : "/fynity-dark.png"}
-                alt="Fynity Logo"
-                width={150}
-                height={40} 
-                className="object-contain" 
-                priority 
-              />
+              {mounted && (
+                <Image
+                  src={resolvedTheme === "dark" ? "/fynity-bright.png" : "/fynity-dark.png"}
+                  alt="Fynity Logo"
+                  width={150}
+                  height={40}
+                  className="object-contain"
+                  priority
+                />
+              )}
             </motion.div>
         </Link>
 
