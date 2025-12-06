@@ -1,17 +1,13 @@
 RewriteEngine On
+RewriteBase /
 
-# Direct mapping for static routes
-RewriteRule ^about/?$    /about/index.html [L]
-RewriteRule ^workshop/?$  /workshop/index.html [L]
-RewriteRule ^services/?$ /services/index.html [L]
-RewriteRule ^contact/?$  /contact/index.html [L]
-RewriteRule ^connect/?$ /connect/index.html [L]
-RewriteRule ^_not-found/?$ /_not-found/index.html [L]
-
-# Serve existing files and folders directly
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
+# Serve real files
+RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# SPA fallback - serve home for client-side routes
-RewriteRule . /index.html [L]
+# Map /page → /page.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# SPA fallback
+RewriteRule ^ index.html [L]
